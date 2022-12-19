@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  lints:
+    name: Test
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: determinatesystems/nix-installer@main
+        with:
+          # Allow the installed Nix to make authenticated Github requests.
+          # If you skip this, you will likely get rate limited.
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: nix flake check
+      - run: nix run
