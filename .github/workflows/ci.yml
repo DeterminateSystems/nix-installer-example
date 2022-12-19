@@ -10,7 +10,7 @@ jobs:
     name: Test
     runs-on: ubuntu-22.04
     steps:
-      - uses: determinatesystems/nix-installer@main
+      - uses: DeterminateSystems/nix-installer@main
         with:
           # Allow the installed Nix to make authenticated Github requests.
           # If you skip this, you will likely get rate limited.
