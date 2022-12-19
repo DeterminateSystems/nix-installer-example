@@ -8,7 +8,10 @@ on:
 jobs:
   lints:
     name: Test
-    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, macos-12]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: DeterminateSystems/nix-installer@main
         with:
