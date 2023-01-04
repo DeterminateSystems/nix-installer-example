@@ -21,3 +21,8 @@ jobs:
       - uses: actions/checkout@v3
       - run: nix flake check
       - run: nix run
+      - uses: cachix/cachix-action@v11
+        with:
+          name: test
+          # If you chose signing key for write access
+          signingKey: 'bears'
