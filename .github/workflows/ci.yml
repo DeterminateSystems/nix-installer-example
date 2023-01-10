@@ -18,6 +18,8 @@ jobs:
           # Allow the installed Nix to make authenticated Github requests.
           # If you skip this, you will likely get rate limited.
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          extra-config:
+            trusted-users = root runner
       - uses: actions/checkout@v3
       - run: nix flake check
       - run: nix run
