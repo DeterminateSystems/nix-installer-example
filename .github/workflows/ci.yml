@@ -13,7 +13,7 @@ jobs:
         os: [ubuntu-22.04, macos-12]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: DeterminateSystems/nix-installer@3eb1359cc4556ec8145afb1e77060ab9fb3a5ab5
+      - uses: DeterminateSystems/nix-installer@cca8c0622ae8bc5a75c02c77a15f72ba264483b8
         with:
           # Allow the installed Nix to make authenticated Github requests.
           # If you skip this, you will likely get rate limited.
