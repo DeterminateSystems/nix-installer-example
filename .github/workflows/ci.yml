@@ -20,4 +20,6 @@ jobs:
       - run: nix flake check
       - run: nix run
       - run: nix profile install nixpkgs#hello
+      - run: echo $PATH
+      - run: ls -lah ~/.nix-profile
       - run: hello
