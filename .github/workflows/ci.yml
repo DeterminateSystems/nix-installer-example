@@ -13,7 +13,9 @@ jobs:
         os: [ubuntu-22.04, macos-12]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/nix-installer-action@v3
+        with:
+          nix-installer-tag: "v0.9.0"
       - uses: actions/checkout@v3
       - run: nix flake check
       - run: nix run
