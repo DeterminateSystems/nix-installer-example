@@ -23,5 +23,5 @@ jobs:
             experimental-features = repl-flake
       - run: cat /etc/nix/nix.conf
       - uses: DeterminateSystems/magic-nix-cache-action@main
-      - run: nix flake check
-      - run: nix run
+      - run: nix --experimental-features "flakes nix-command" flake check
+      - run: nix --experimental-features "flakes nix-command" run
