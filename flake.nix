@@ -1,6 +1,8 @@
 {
   description = "A very basic flake";
 
+  inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2305.491476.tar.gz";
+
   outputs = { self, nixpkgs }:
     let
       nameValuePair = name: value: { inherit name value; };
